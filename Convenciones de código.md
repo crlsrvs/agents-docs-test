@@ -1,13 +1,9 @@
 
 ## 1. Propósito y alcance
 
-Este documento establece las convenciones técnicas para desarrollar software de manera consistente, mantenible y verificable.
+Este documento establece convenciones técnicas de organización, nomenclatura, formato, tipado, contratos, testing, documentación, control de versiones y colaboración para desarrollar software consistente, mantenible y verificable.
 
-Sus reglas abarcan organización del código, nomenclatura, formato, tipado, contratos, testing, documentación, control de versiones y colaboración.
-
-Está diseñado para proyectos con distintos lenguajes, frameworks y arquitecturas, desarrollados por personas o con asistencia de agentes de IA.
-
-Este documento constituye una fuente normativa para generar `AGENTS.md`, junto con las convenciones para agentes, el PRD y la configuración real del repositorio.
+Se aplica a proyectos con distintos lenguajes, frameworks y arquitecturas, desarrollados por personas o agentes de IA. Es una fuente normativa para generar `AGENTS.md`, junto con las convenciones para agentes, el PRD y la configuración real del repositorio.
 
 **No es una instrucción para instalar dependencias, inicializar herramientas o modificar proyectos automáticamente.**
 
@@ -59,18 +55,7 @@ No aplicar principios como DRY, SOLID o patrones de diseño de manera dogmática
 
 La organización del código DEBE respetar la arquitectura definida para el proyecto.
 
-Cuando no exista una arquitectura previamente establecida, PREFERIR una organización que favorezca:
-
-- Agrupación de responsabilidades relacionadas.
-    
-- Separación clara entre funcionalidades.
-    
-- Dependencias controladas.
-    
-- Localización sencilla de los archivos.
-    
-- Evolución independiente de módulos cuando sea posible.
-    
+Cuando no exista una arquitectura establecida, PREFERIR una organización que agrupe responsabilidades relacionadas, separe funcionalidades, controle dependencias y facilite localizar archivos y evolucionar módulos de forma independiente cuando sea posible.
 
 La arquitectura Feature-First puede ser una opción adecuada, pero NO DEBE imponerse cuando el framework, los requisitos o las decisiones técnicas justifiquen otra estructura.
 
@@ -95,9 +80,7 @@ Las pruebas de integración y end-to-end pueden utilizar directorios independien
 
 ### 3.3. Código compartido
 
-Un componente, servicio o utilidad DEBE trasladarse a un módulo compartido solamente cuando exista una necesidad concreta de reutilización o una responsabilidad transversal.
-
-NO DEBE crearse código compartido para funcionalidades utilizadas exclusivamente por un módulo sin justificación técnica.
+Un componente, servicio o utilidad DEBE trasladarse a un módulo compartido solamente cuando exista una necesidad concreta de reutilización o una responsabilidad transversal. NO DEBE crearse código compartido para funcionalidades exclusivas de un módulo sin justificación técnica.
 
 PREFERIR mantener las abstracciones cerca de sus consumidores hasta que exista una razón clara para generalizarlas.
 
@@ -107,7 +90,7 @@ PREFERIR mantener las abstracciones cerca de sus consumidores hasta que exista u
 
 Los identificadores DEBEN utilizar nombres descriptivos, consistentes y acordes con las convenciones del lenguaje.
 
-Evitar abreviaturas ambiguas, nombres genéricos y términos que no representen su responsabilidad.
+NO DEBEN utilizarse nombres engañosos ni abreviaturas innecesarias. Evitar abreviaturas ambiguas, nombres genéricos y términos que no representen su responsabilidad.
 
 ### 4.1. Convenciones generales
 
@@ -118,11 +101,7 @@ Evitar abreviaturas ambiguas, nombres genéricos y términos que no representen 
 |`snake_case`|Columnas de base de datos y claves de API cuando el contrato o la convención adoptada lo establezca|`user_profile_id`|
 |`SCREAMING_SNAKE_CASE`|Constantes globales conceptuales y variables de entorno|`MAX_RETRY_COUNT`|
 
-Estas convenciones son referencias para los contextos indicados, no reglas universales para todos los lenguajes.
-
-Por ejemplo, Python utiliza habitualmente `snake_case` para funciones y variables, mientras que otros lenguajes tienen convenciones propias.
-
-Las convenciones idiomáticas del lenguaje y las reglas del framework DEBEN respetarse.
+La tabla se limita a los contextos indicados. Las convenciones idiomáticas del lenguaje y las reglas del framework DEBEN respetarse; por ejemplo, Python utiliza habitualmente `snake_case` para funciones y variables.
 
 ### 4.2. Nombres semánticos
 
@@ -136,8 +115,6 @@ Las convenciones idiomáticas del lenguaje y las reglas del framework DEBEN resp
     
 - Las constantes DEBEN diferenciarse de variables mutables mediante las convenciones propias del lenguaje.
     
-
-NO DEBEN utilizarse nombres engañosos ni abreviaturas innecesarias.
 
 ### 4.3. Nomenclatura de archivos
 
@@ -164,13 +141,9 @@ No mezclar convenciones de nombres equivalentes dentro de un mismo proyecto sin 
 
 ### 5.1. Reglas generales
 
-El código DEBE mantener un formato consistente.
+El código DEBE mantener un formato consistente. PREFERIR herramientas automáticas de formateo y análisis estático compatibles con el stack.
 
-PREFERIR herramientas automáticas de formateo y análisis estático compatibles con el stack.
-
-Cuando existan herramientas configuradas, sus reglas constituyen la referencia para los aspectos que controlan.
-
-NO DEBEN introducirse preferencias manuales que contradigan innecesariamente el formateador o linter del proyecto.
+Las herramientas configuradas son la referencia para los aspectos que controlan. NO DEBEN introducirse preferencias manuales que contradigan innecesariamente sus reglas.
 
 ### 5.2. EditorConfig
 
@@ -398,16 +371,7 @@ Las tres etapas DEBEN ser reconocibles, aunque no requieren comentarios explíci
 
 ### 9.3. Nomenclatura y ubicación
 
-En proyectos JavaScript/TypeScript, utilizar preferentemente sufijos como:
-
-- `.spec.ts`
-    
-- `.spec.tsx`
-    
-- `.test.ts`
-    
-- `.test.tsx`
-    
+En proyectos JavaScript/TypeScript, PREFERIR la nomenclatura de la sección 4.3, con sufijos como `.spec.ts`, `.spec.tsx`, `.test.ts` o `.test.tsx`.
 
 PREFERIR mantener las pruebas unitarias cerca de su implementación (_co-location_).
 
@@ -467,18 +431,7 @@ NO DEBEN utilizarse comentarios para repetir literalmente lo que hace una instru
 
 En proyectos JavaScript/TypeScript, PREFERIR JSDoc o TSDoc para documentar comportamientos cuyo propósito no resulte suficientemente claro mediante nombres y tipos.
 
-Utilizarlos especialmente para:
-
-- APIs públicas.
-    
-- Reglas de negocio complejas.
-    
-- Restricciones importantes.
-    
-- Efectos secundarios relevantes.
-    
-- Contratos que requieran explicaciones adicionales.
-    
+Utilizarlos especialmente para APIs públicas, reglas de negocio complejas, restricciones importantes, efectos secundarios relevantes y contratos que requieran explicaciones adicionales.
 
 Evitar anotaciones redundantes que únicamente repitan tipos ya expresados claramente por TypeScript.
 
@@ -607,28 +560,13 @@ El archivo `CHANGELOG.md` DEBERÍA documentar cambios relevantes utilizando, cua
 
 PREFERIR una sección `Unreleased` para cambios relevantes que todavía no forman parte de una versión publicada.
 
-No convertir el changelog en una copia exhaustiva del historial Git.
-
-Su propósito es comunicar cambios significativos y comprensibles para los consumidores del software.
+El changelog debe comunicar cambios significativos y comprensibles para los consumidores, sin convertirse en una copia exhaustiva del historial Git.
 
 ---
 
 ## 12. Aplicación de las convenciones
 
-Estas convenciones DEBEN aplicarse de forma coherente con:
-
-- El lenguaje de programación.
-    
-- El framework seleccionado.
-    
-- La arquitectura vigente.
-    
-- Los requisitos del PRD.
-    
-- Las decisiones arquitectónicas documentadas.
-    
-- Las herramientas y configuraciones reales del repositorio.
-    
+Estas convenciones DEBEN aplicarse de forma coherente con el lenguaje, el framework, la arquitectura vigente, los requisitos del PRD, las decisiones arquitectónicas documentadas y las herramientas y configuraciones reales del repositorio.
 
 Las reglas generales NO DEBEN utilizarse para sustituir convenciones específicas ya establecidas y técnicamente justificadas.
 

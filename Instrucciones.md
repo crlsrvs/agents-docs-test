@@ -31,9 +31,7 @@ Considerar las siguientes herramientas únicamente cuando aporten un beneficio c
 - **CodeGraph:** [https://github.com/colbymchenry/codegraph](https://github.com/colbymchenry/codegraph)
     
 
-Estas herramientas pueden mejorar determinados flujos de trabajo, pero no son requisitos para inicializar el proyecto.
-
-No instalar herramientas adicionales únicamente para completar este procedimiento.
+Estas herramientas son opcionales. No instalar herramientas adicionales únicamente para completar este procedimiento.
 
 ---
 
@@ -61,11 +59,7 @@ No sobrescribir configuraciones existentes sin revisarlas previamente.
 
 ## 4. Crear el PRD
 
-Utilizar el archivo:
-
-`Prompt - PRD creation.md`
-
-Ejecutarlo en un asistente de IA para definir progresivamente:
+Utilizar `Prompt - PRD creation.md` en un asistente de IA para definir progresivamente:
 
 - Objetivo y alcance del producto.
     
@@ -86,9 +80,7 @@ Ejecutarlo en un asistente de IA para definir progresivamente:
 - Decisiones pendientes.
     
 
-Guardar el resultado en:
-
-`docs/PRD.md`
+Guardar el resultado en `docs/PRD.md`.
 
 ### Validación del PRD
 
@@ -118,8 +110,6 @@ Copiar los siguientes archivos dentro de `docs/`:
 - `Convenciones de código.md`
     
 
-Estos documentos establecen las normas generales del proyecto.
-
 ### Responsabilidades
 
 **Convenciones para agentes**
@@ -140,13 +130,7 @@ Los tres documentos deben complementarse sin duplicar innecesariamente sus respo
 
 ## 6. Preparar el generador de AGENTS.md
 
-Copiar temporalmente el archivo:
-
-`Prompt - AGENTS.md`
-
-Dentro del directorio:
-
-`docs/`
+Copiar temporalmente `Prompt - AGENTS.md` dentro de `docs/`.
 
 La estructura esperada antes de ejecutar el generador será:
 
@@ -179,24 +163,13 @@ Proporcionarle la siguiente instrucción:
 
 El generador debe:
 
-1. Leer los documentos fuente.
-    
-2. Inspeccionar el repositorio.
-    
-3. Identificar tecnologías y decisiones confirmadas.
-    
-4. Consolidar las convenciones aplicables.
-    
-5. Detectar contradicciones y decisiones pendientes.
-    
-6. Generar `AGENTS.md` en la raíz.
-    
-7. Generar `.editorconfig` en la raíz.
-    
-8. Verificar la coherencia de ambos archivos.
-    
-9. Informar los resultados y limitaciones.
-    
+1. Leer los documentos fuente e inspeccionar el repositorio para identificar tecnologías y decisiones confirmadas.
+
+2. Consolidar las convenciones aplicables y detectar contradicciones y decisiones pendientes.
+
+3. Generar o actualizar `AGENTS.md` y `.editorconfig` en la raíz.
+
+4. Verificar la coherencia de ambos archivos e informar los resultados y limitaciones.
 
 ### Condiciones importantes
 
@@ -251,9 +224,7 @@ Antes de comenzar el desarrollo, revisar manualmente:
 - No contradice configuraciones de formato existentes.
     
 
-**Importante:** si el proyecto todavía no tiene herramientas de desarrollo instaladas, `AGENTS.md` no debe incluir comandos de verificación inventados.
-
-Estos comandos podrán incorporarse posteriormente cuando exista una configuración real.
+**Importante:** si todavía no hay herramientas de desarrollo instaladas, no inventar comandos de verificación para `AGENTS.md`. Podrán incorporarse cuando exista una configuración real.
 
 No es necesario modificar el repositorio para satisfacer artificialmente una verificación.
 
@@ -261,9 +232,7 @@ No es necesario modificar el repositorio para satisfacer artificialmente una ver
 
 ## 9. Limpiar los archivos temporales
 
-Una vez revisados y aprobados los archivos generados, puede eliminarse la copia temporal de:
-
-`docs/Prompt - AGENTS.md`
+Una vez revisados y aprobados los archivos generados, puede eliminarse la copia temporal de `docs/Prompt - AGENTS.md`.
 
 Conservar el prompt original en la colección de documentos reutilizables para futuras inicializaciones y actualizaciones.
 
@@ -336,9 +305,7 @@ A partir de este punto, puede utilizarse un modelo más económico o rápido par
 
 ### Compatibilidad entre agentes
 
-`AGENTS.md` será la referencia operativa común.
-
-Sin embargo, cada herramienta puede utilizar mecanismos diferentes para descubrir o cargar las instrucciones.
+`AGENTS.md` será la referencia operativa común, aunque cada herramienta puede utilizar mecanismos diferentes para descubrir o cargar las instrucciones.
 
 Antes de trabajar con un nuevo agente, comprobar que efectivamente está leyendo `AGENTS.md`.
 
@@ -347,8 +314,6 @@ Si requiere configuración adicional, realizarla de acuerdo con la documentació
 ---
 
 ## 12. Mantenimiento de las convenciones
-
-La configuración inicial no es necesariamente definitiva.
 
 Cuando cambien significativamente los requisitos, la arquitectura o las convenciones técnicas:
 
@@ -363,8 +328,6 @@ Cuando cambien significativamente los requisitos, la arquitectura o las convenci
 5. Verificar que los cambios no introduzcan contradicciones.
     
 
-No regenerar `AGENTS.md` indiscriminadamente ante modificaciones menores.
-
-La actualización debe responder a cambios reales en las instrucciones necesarias para trabajar sobre el proyecto.
+Actualizar `AGENTS.md` cuando cambien las instrucciones necesarias para trabajar sobre el proyecto; no regenerarlo indiscriminadamente ante modificaciones menores.
 
 **Objetivo final:** mantener un entorno de desarrollo asistido por IA consistente, verificable y adaptable, sin depender de un proveedor, modelo o framework específico.

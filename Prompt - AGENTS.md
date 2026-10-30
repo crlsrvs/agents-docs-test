@@ -12,11 +12,9 @@ Debes producir:
 2. `.editorconfig` en la raíz del proyecto.
     
 
-Ambos archivos deben estar adaptados al contexto real del repositorio, ser consistentes con la documentación y evitar decisiones técnicas no justificadas.
+Ambos archivos deben ser claros, verificables, independientes del proveedor y coherentes con la documentación y el repositorio, sin decisiones técnicas injustificadas.
 
 **No debes implementar funcionalidades del producto ni inicializar herramientas adicionales.**
-
-El resultado debe permitir que diferentes agentes de IA trabajen sobre el mismo proyecto siguiendo instrucciones claras, consistentes, verificables e independientes del proveedor.
 
 ---
 
@@ -100,7 +98,7 @@ Combina las fuentes respetando sus responsabilidades.
 
 ### 4.1. Reglas de consolidación
 
-1. Incorporar las convenciones aplicables al proyecto.
+1. Incorporar únicamente las convenciones aplicables al proyecto.
     
 2. Adaptar las recomendaciones generales al stack confirmado.
     
@@ -112,9 +110,7 @@ Combina las fuentes respetando sus responsabilidades.
     
 6. Conservar referencias a documentación complementaria cuando corresponda.
     
-7. Excluir recomendaciones que no sean aplicables.
-    
-8. No transformar preferencias técnicas en obligaciones sin justificación.
+7. No transformar preferencias técnicas en obligaciones sin justificación.
     
 
 `AGENTS.md` debe ser una guía operativa, no una reproducción completa de los documentos fuente.
@@ -148,11 +144,7 @@ Cuando una contradicción impida formular instrucciones fiables, solicita la dec
 
 ## 5. Generación de AGENTS.md
 
-Crea o actualiza `AGENTS.md` en la raíz del proyecto.
-
-El archivo debe estar redactado completamente en **inglés**.
-
-Utiliza Markdown claro, instrucciones directas y una estructura fácil de consultar.
+Crea o actualiza `AGENTS.md` en la raíz, completamente en **inglés**, con Markdown claro, instrucciones directas y una estructura fácil de consultar.
 
 El documento debe incluir las siguientes secciones, adaptadas al proyecto.
 
@@ -196,9 +188,7 @@ Si todavía no existe una estructura implementada, describe únicamente la arqui
 
 ### 5.3. Coding Conventions
 
-Incorpora las reglas técnicas esenciales derivadas de `Convenciones de código.md`.
-
-Incluye únicamente las que resulten relevantes para el proyecto, tales como:
+Incorpora las reglas técnicas esenciales de `Convenciones de código.md` que resulten relevantes para el proyecto, tales como:
 
 - Nomenclatura.
     
@@ -219,11 +209,7 @@ Incluye únicamente las que resulten relevantes para el proyecto, tales como:
 - Convenciones de testing.
     
 
-Prioriza reglas concretas y específicas.
-
-Evita reproducir extensamente las convenciones generales.
-
-Incluye una referencia al documento de convenciones de código para consultar los detalles completos.
+Utiliza reglas concretas y específicas, con una referencia al documento fuente para los detalles, sin reproducir extensamente las convenciones generales.
 
 ### 5.4. Agent Operating Rules
 
@@ -334,9 +320,7 @@ Incluye referencias relativas a la documentación relevante, especialmente:
 - ADR existentes, cuando corresponda.
     
 
-No agregues referencias a archivos inexistentes.
-
-Las referencias deben utilizar rutas reales y válidas dentro del repositorio.
+Utiliza rutas reales y válidas dentro del repositorio; no agregues referencias a archivos inexistentes.
 
 ### 5.8. Pending Decisions
 
@@ -359,16 +343,7 @@ Omite la sección cuando no existan pendientes relevantes.
 
 Crea o actualiza `.editorconfig` en la raíz del proyecto.
 
-La configuración debe basarse en:
-
-1. Las convenciones de código.
-    
-2. El lenguaje y framework del proyecto.
-    
-3. Las herramientas de formateo existentes.
-    
-4. Las configuraciones ya adoptadas.
-    
+Basa la configuración en las convenciones de código, el lenguaje y framework del proyecto, las herramientas de formateo existentes y las configuraciones ya adoptadas.
 
 Para proyectos nuevos, utiliza como base cuando corresponda:
 
